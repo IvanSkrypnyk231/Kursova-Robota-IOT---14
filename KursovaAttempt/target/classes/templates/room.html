@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="'id: ' + ${room.id}" />
+<form action="#" method="post" th:action="@{/put/} + ${room.id}" th:object="${room}">
+    <!-- form fields for feedback's submitter and comment info -->
+    <p>Temp: <input type="text" th:field="*{temperature}" /></p>
+    <p>Humidity: <input type="text" th:field="*{humidity}" /></p>
+    <p>Illumination: <input type="text" th:field="*{illumination}" /></p>
+    <p>Battery Heat Consumption: <input type="text" th:field="*{battery.heatConsumption}" /></p>
+    <p>Battery Water Temperature: <input type="text" th:field="*{battery.waterTemperature}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+</body>
+</html>
